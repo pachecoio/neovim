@@ -92,6 +92,7 @@ vim.keymap.set('n', '<leader>fn', function()
 end, { desc = 'Create new file' })
 
 vim.keymap.set('n', '<leader>ww', ':w<CR>', { desc = 'Save current file' })
+vim.keymap.set('n', '<leader>wq', ':wq<CR>', { desc = 'Save and close current file' })
 -- source current file
 vim.keymap.set('n', '<leader>fs', ':source %<CR>', { desc = 'Source current file' })
 
@@ -133,3 +134,17 @@ end
 -- Open cheatsheet cli tool terminal
 -- Asks for selection
 vim.keymap.set('n', '<leader>cs', trigger_cheatsheet, { desc = 'Open cheatsheet' })
+
+local toggle_copilot = function()
+  vim.g.copilot_enabled = not vim.g.copilot_enabled
+  if vim.g.copilot_enabled then
+    vim.cmd 'echo "on"'
+  else
+    vim.cmd 'echo "off"'
+  end
+end
+
+-- Copilot remaps
+vim.keymap.set('n', '<leader>cp', ':Copilot<CR>', { desc = 'Open Copilot' })
+vim.keymap.set('n', '<c-j>', toggle_copilot, { desc = 'Enable/disable copilot' })
+vim.keymap.set('i', '<c-j>', toggle_copilot, { desc = 'Enable/disable copilot' })

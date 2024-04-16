@@ -25,4 +25,5 @@ return {
     name = 'catppuccin',
     priority = 1000,
   },
+  'morhetz/gruvbox',
 }
