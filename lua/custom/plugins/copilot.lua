@@ -26,11 +26,4 @@ return {
       vim.api.nvim_set_keymap('n', '<c-s>', "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
     end,
   },
-  -- {
-  --   'hrsh7th/cmp-copilot',
-  --   config = function()
-  --     -- lvim.builtin.cmp.formatting.source_names["copilot"] = "( )"
-  --     -- table.insert(lvim.builtin.cmp.sources, 2, { name = "copilot" })
-  --   end,
-  -- },
 }
