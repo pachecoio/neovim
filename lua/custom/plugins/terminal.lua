@@ -14,13 +14,13 @@ return {
         direction = 'horizontal',
         close_on_exit = true,
         shell = vim.o.shell,
-        float_opts = {
-          border = 'curved',
-          winblend = 3,
-          highlights = {
-            border = 'normal',
-          },
-        },
+        -- float_opts = {
+        --   border = 'curved',
+        --   winblend = 3,
+        --   highlights = {
+        --     border = 'normal',
+        --   },
+        -- },
       }
       vim.keymap.set('n', '<leader>;', ':ToggleTerm<cr>', { desc = 'Toggle terminal new tab' })
     end,
