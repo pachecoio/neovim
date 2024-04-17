@@ -19,7 +19,6 @@ return {
           winblend = 3,
           highlights = {
             border = 'normal',
-            background = 'normal',
           },
         },
       }
