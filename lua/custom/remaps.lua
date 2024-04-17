@@ -133,3 +133,5 @@ end
 -- Open cheatsheet cli tool terminal
 -- Asks for selection
 vim.keymap.set('n', '<leader>cs', trigger_cheatsheet, { desc = 'Open cheatsheet' })
+
+vim.keymap.set('n', '<leader>j', '@q', { desc = 'Replay macro' })
