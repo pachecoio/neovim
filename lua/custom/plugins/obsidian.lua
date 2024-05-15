@@ -21,7 +21,7 @@ return {
       workspaces = {
         {
           name = 'General',
-          path = '~/.vault/personal',
+          path = '~/personal/vault',
         },
       },
     },
