@@ -188,6 +188,7 @@ return {
     -- Optional, configure additional syntax highlighting / extmarks.
     ui = {
       enable = true, -- set to false to disable all additional syntax features
+      conceallevel = 1, -- set to 0 to disable conceal feature
       update_debounce = 200, -- update delay after a text change (in milliseconds)
       -- Define how various check-boxes are displayed
       checkboxes = {

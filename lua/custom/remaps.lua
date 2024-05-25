@@ -107,10 +107,10 @@ vim.keymap.set('n', '<leader>fn', function()
   new_file()
 end, { desc = 'Create new file' })
 
-vim.keymap.set('n', '<leader>ww', ':w<CR>', { desc = 'Save current file' })
+vim.keymap.set('n', '<leader>fs', ':w<CR>', { desc = 'Save current file' })
 vim.keymap.set('n', '<leader>wq', ':wq<CR>', { desc = 'Save and close current file' })
 -- source current file
-vim.keymap.set('n', '<leader>fs', ':source %<CR>', { desc = 'Source current file' })
+vim.keymap.set('n', '<leader>xs', ':source %<CR>', { desc = 'Source current file' })
 
 -- Workspace delete current file
 -- should ask for confirmation
@@ -171,3 +171,55 @@ end
 
 -- keymap to migrate current file to esm
 vim.keymap.set('n', '<leader>xm', migratoCurrentFileToEsm, { desc = 'Migrate current file to esm' })
+
+-- File management remaps
+
+local baseProjectsDir = '~'
+
+local function get_dir(path)
+  -- check if it is file, then get the dirname
+  if vim.fn.isdirectory(path) == 0 then
+    return vim.fn.fnamemodify(path, ':h')
+  end
+  return path
+end
+
+local actions = require 'telescope.actions'
+local action_state = require 'telescope.actions.state'
+
+local function open_project()
+  require('telescope.builtin').find_files {
+    prompt_title = 'Open Project',
+    cwd = baseProjectsDir,
+    attach_mappings = function(prompt_bufnr, map)
+      actions.select_default:replace(function()
+        local selection = action_state.get_selected_entry()
+        actions.close(prompt_bufnr)
+        local dir = get_dir(selection.path)
+        vim.cmd('cd ' .. dir)
+        -- open file in buffer
+        vim.cmd('e ' .. selection.path)
+      end)
+      return true
+    end,
+  }
+end
+
+vim.keymap.set('n', '<leader>pf', open_project, { desc = 'Open project' })
+
+local function open_file()
+  require('telescope.builtin').find_files {
+    prompt_title = 'Find Files',
+    cwd = baseProjectsDir,
+    attach_mappings = function(prompt_bufnr, map)
+      actions.select_default:replace(function()
+        local selection = action_state.get_selected_entry()
+        actions.close(prompt_bufnr)
+        vim.cmd('e ' .. selection.path)
+      end)
+      return true
+    end,
+  }
+end
+
+vim.keymap.set('n', '<leader>ff', open_file, { desc = 'Find file' })

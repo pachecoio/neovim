@@ -1,0 +1,57 @@
+{
+  "Time": "2024-05-22T19:08:32.647862602-04:00",
+  "Action": "start",
+  "Package": "playground"
+}
+{
+  "Time": "2024-05-22T19:08:32.647898261-04:00",
+  "Action": "run",
+  "Package": "playground",
+  "Test": "TestRandom"
+}
+{
+  "Time": "2024-05-22T19:08:32.647900685-04:00",
+  "Action": "output",
+  "Package": "playground",
+  "Test": "TestRandom",
+  "Output": "=== RUN   TestRandom\n"
+}
+{
+  "Time": "2024-05-22T19:08:32.647903136-04:00",
+  "Action": "output",
+  "Package": "playground",
+  "Test": "TestRandom",
+  "Output": "    main_test.go:6: This is a test\n"
+}
+{
+  "Time": "2024-05-22T19:08:32.647907178-04:00",
+  "Action": "output",
+  "Package": "playground",
+  "Test": "TestRandom",
+  "Output": "--- PASS: TestRandom (0.00s)\n"
+}
+{
+  "Time": "2024-05-22T19:08:32.647909039-04:00",
+  "Action": "pass",
+  "Package": "playground",
+  "Test": "TestRandom",
+  "Elapsed": 0
+}
+{
+  "Time": "2024-05-22T19:08:32.647911409-04:00",
+  "Action": "output",
+  "Package": "playground",
+  "Output": "PASS\n"
+}
+{
+  "Time": "2024-05-22T19:08:32.647912744-04:00",
+  "Action": "output",
+  "Package": "playground",
+  "Output": "ok  \tplayground\t(cached)\n"
+}
+{
+  "Time": "2024-05-22T19:08:32.647914982-04:00",
+  "Action": "pass",
+  "Package": "playground",
+  "Elapsed": 0
+}
