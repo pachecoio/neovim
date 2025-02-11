@@ -45,4 +45,7 @@ vim.opt.wrap = true
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
 
+-- set rtp^="/Users/thiagopacheco/.opam/default/share/ocp-indent/vim"
+vim.opt.rtp:append '/Users/thiagopacheco/.opam/default/share/ocp-indent/vim'
+
 return {}
