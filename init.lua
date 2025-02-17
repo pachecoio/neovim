@@ -1,3 +1,11 @@
+if vim.g.vscode then
+  print 'VSCode mode enabled'
+  require 'vscode-config'
+  -- elseif vim.g.neovide then
+  --   vim.o.shell = "/bin/zsh"
+  return
+end
+
 --[[
 
 =====================================================================
