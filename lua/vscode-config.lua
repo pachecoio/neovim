@@ -111,11 +111,11 @@ vim.keymap.set('n', 'gf', function()
   vscode.action 'workbench.action.navigateForward'
 end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>ff', function()
+vim.keymap.set('n', '<leader>sf', function()
   vscode.action 'workbench.action.quickOpen'
 end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>fw', function()
+vim.keymap.set('n', '<leader>sg', function()
   vscode.action 'workbench.action.findInFiles'
 end, { noremap = true, silent = true })
 
