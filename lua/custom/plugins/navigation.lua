@@ -19,4 +19,10 @@ map('n', '<Leader>fs', ':w<cr>', { desc = 'Save file' })
 
 map('t', '<esc>', '<C-\\><C-n>')
 
+-- Open terminal with leader ;
+map('n', '<Leader>;', ':term<cr>i', { desc = 'Open terminal' })
+
+-- Evaluate current file to update neovim with leader x
+map('n', '<Leader>x', ':luafile %<cr>', { desc = 'Evaluate current file' })
+
 return {}
